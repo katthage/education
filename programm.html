@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Ideal Work-Life Balance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f5;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+        .content {
+            width: 65%;
+        }
+        .sidebar {
+            width: 30%;
+            position: sticky;
+            top: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+        .statement {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .statement p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        .button {
+            margin: 5px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .content-box {
+            display: none;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .input-field {
+            width: calc(100% - 80px);
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-right: 5px;
+        }
+        ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Useful Phrases</h2>
+        <ul>
+            <li>I believe that...</li>
+            <li>In my opinion...</li>
+            <li>From my perspective...</li>
+            <li>I think that...</li>
+            <li>It seems to me that...</li>
+            <li>I feel that...</li>
+            <li>One reason is...</li>
+            <li>Another point is...</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h1>My Ideal Work-Life Balance</h1>
+
+        <!-- Option Buttons and Content for each statement -->
+        <div class="statement">
+            <p>1. A higher salary is more important than working only 30 hours a week.</p>
+            <div>
+                <button class="button" onclick="toggleContent('box1', 'box2')">Agree</button>
+                <button class="button" onclick="toggleContent('box2', 'box1')">Disagree</button>
+            </div>
+            <div id="box1" class="content-box">
+                <h2>Reasons to Agree</h2>
+                <ul id="list1">
+                    <li>More money can help you save for the future.</li>
+                    <li>You can afford nicer things and experiences.</li>
+                    <li>Financial security reduces stress.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input1" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input1', 'list1')">Add</button>
+                </div>
+            </div>
+            <div id="box2" class="content-box">
+                <h2>Reasons to Disagree</h2>
+                <ul id="list2">
+                    <li>Less work means more time for family and hobbies.</li>
+                    <li>Working fewer hours can reduce stress.</li>
+                    <li>More free time can improve your health.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input2" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input2', 'list2')">Add</button>
+                </div>
+            </div>
+        </div>
+        <div class="statement">
+            <p>2. I would never want to work in an open-plan office.</p>
+            <div>
+                <button class="button" onclick="toggleContent('box3', 'box4')">Agree</button>
+                <button class="button" onclick="toggleContent('box4', 'box3')">Disagree</button>
+            </div>
+            <div id="box3" class="content-box">
+                <h2>Reasons to Agree</h2>
+                <ul id="list3">
+                    <li>Open offices are noisy and distracting.</li>
+                    <li>There is no privacy.</li>
+                    <li>It can be easier to catch illnesses.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input3" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input3', 'list3')">Add</button>
+                </div>
+            </div>
+            <div id="box4" class="content-box">
+                <h2>Reasons to Disagree</h2>
+                <ul id="list4">
+                    <li>Open spaces can make it easier to talk to coworkers.</li>
+                    <li>It can create a lively and energetic atmosphere.</li>
+                    <li>You might feel more connected to the team.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input4" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input4', 'list4')">Add</button>
+                </div>
+            </div>
+        </div>
+        <div class="statement">
+            <p>3. I want to have responsibilities in my job and not have a boss tell me everything.</p>
+            <div>
+                <button class="button" onclick="toggleContent('box5', 'box6')">Agree</button>
+                <button class="button" onclick="toggleContent('box6', 'box5')">Disagree</button>
+            </div>
+            <div id="box5" class="content-box">
+                <h2>Reasons to Agree</h2>
+                <ul id="list5">
+                    <li>Having responsibility can make you feel trusted.</li>
+                    <li>It allows you to be creative and try new things.</li>
+                    <li>You can learn and grow more in your role.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input5" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input5', 'list5')">Add</button>
+                </div>
+            </div>
+            <div id="box6" class="content-box">
+                <h2>Reasons to Disagree</h2>
+                <ul id="list6">
+                    <li>Having a boss guide you can reduce mistakes.</li>
+                    <li>It can be less stressful to have clear directions.</li>
+                    <li>There is less pressure to make big decisions.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input6" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input6', 'list6')">Add</button>
+                </div>
+            </div>
+        </div>
+        <div class="statement">
+            <p>4. I do not want to work extra hours or on weekends, even for more pay.</p>
+            <div>
+                <button class="button" onclick="toggleContent('box7', 'box8')">Agree</button>
+                <button class="button" onclick="toggleContent('box8', 'box7')">Disagree</button>
+            </div>
+            <div id="box7" class="content-box">
+                <h2>Reasons to Agree</h2>
+                <ul id="list7">
+                    <li>Free time is important for rest and fun.</li>
+                    <li>Working too much can lead to burnout.</li>
+                    <li>Weekends are for family and friends.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input7" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input7', 'list7')">Add</button>
+                </div>
+            </div>
+            <div id="box8" class="content-box">
+                <h2>Reasons to Disagree</h2>
+                <ul id="list8">
+                    <li>Extra pay can help with bills and savings.</li>
+                    <li>Working more can lead to promotions.</li>
+                    <li>It can show dedication to your job.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input8" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input8', 'list8')">Add</button>
+                </div>
+            </div>
+        </div>
+        <div class="statement">
+            <p>5. I prefer to work in a team rather than alone.</p>
+            <div>
+                <button class="button" onclick="toggleContent('box9', 'box10')">Agree</button>
+                <button class="button" onclick="toggleContent('box10', 'box9')">Disagree</button>
+            </div>
+            <div id="box9" class="content-box">
+                <h2>Reasons to Agree</h2>
+                <ul id="list9">
+                    <li>Teams can come up with more creative ideas.</li>
+                    <li>Working with others can be more fun.</li>
+                    <li>Teamwork can make tasks easier.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input9" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input9', 'list9')">Add</button>
+                </div>
+            </div>
+            <div id="box10" class="content-box">
+                <h2>Reasons to Disagree</h2>
+                <ul id="list10">
+                    <li>Working alone can be faster.</li>
+                    <li>You can make decisions without waiting for others.</li>
+                    <li>There are no conflicts with teammates.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input10" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input10', 'list10')">Add</button>
+                </div>
+            </div>
+        </div>
+        <div class="statement">
+            <p>6. I am willing to accept a high workload for a high salary.</p>
+            <div>
+                <button class="button" onclick="toggleContent('box11', 'box12')">Agree</button>
+                <button class="button" onclick="toggleContent('box12', 'box11')">Disagree</button>
+            </div>
+            <div id="box11" class="content-box">
+                <h2>Reasons to Agree</h2>
+                <ul id="list11">
+                    <li>A high salary can provide financial comfort.</li>
+                    <li>It can help you reach financial goals faster.</li>
+                    <li>Working hard can improve your skills.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input11" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input11', 'list11')">Add</button>
+                </div>
+            </div>
+            <div id="box12" class="content-box">
+                <h2>Reasons to Disagree</h2>
+                <ul id="list12">
+                    <li>Too much work can lead to stress.</li>
+                    <li>You might not have time for family and hobbies.</li>
+                    <li>It can reduce job satisfaction.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input12" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input12', 'list12')">Add</button>
+                </div>
+            </div>
+        </div>
+        <div class="statement">
+            <p>7. Enjoying my life is more important than building a career at work.</p>
+            <div>
+                <button class="button" onclick="toggleContent('box13', 'box14')">Agree</button>
+                <button class="button" onclick="toggleContent('box14', 'box13')">Disagree</button>
+            </div>
+            <div id="box13" class="content-box">
+                <h2>Reasons to Agree</h2>
+                <ul id="list13">
+                    <li>Life is short, and happiness is key.</li>
+                    <li>Personal experiences can be more rewarding.</li>
+                    <li>Enjoying life can reduce stress.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input13" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input13', 'list13')">Add</button>
+                </div>
+            </div>
+            <div id="box14" class="content-box">
+                <h2>Reasons to Disagree</h2>
+                <ul id="list14">
+                    <li>A career can provide long-term security.</li>
+                    <li>Achievements at work can be fulfilling.</li>
+                    <li>Building a career can improve your skills.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input14" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input14', 'list14')">Add</button>
+                </div>
+            </div>
+        </div>
+        <div class="statement">
+            <p>8. Having a chance for promotion is better than having a relaxed and easy job.</p>
+            <div>
+                <button class="button" onclick="toggleContent('box15', 'box16')">Agree</button>
+                <button class="button" onclick="toggleContent('box16', 'box15')">Disagree</button>
+            </div>
+            <div id="box15" class="content-box">
+                <h2>Reasons to Agree</h2>
+                <ul id="list15">
+                    <li>Promotions can lead to better pay.</li>
+                    <li>It can provide motivation to do your best.</li>
+                    <li>Advancing in your career can be rewarding.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input15" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input15', 'list15')">Add</button>
+                </div>
+            </div>
+            <div id="box16" class="content-box">
+                <h2>Reasons to Disagree</h2>
+                <ul id="list16">
+                    <li>An easy job can mean less stress.</li>
+                    <li>You have more time for personal interests.</li>
+                    <li>It can lead to higher job satisfaction.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input16" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input16', 'list16')">Add</button>
+                </div>
+            </div>
+        </div>
+        <div class="statement">
+            <p>9. Spending evenings with family and friends is more important than working extra hours for a promotion.</p>
+            <div>
+                <button class="button" onclick="toggleContent('box17', 'box18')">Agree</button>
+                <button class="button" onclick="toggleContent('box18', 'box17')">Disagree</button>
+            </div>
+            <div id="box17" class="content-box">
+                <h2>Reasons to Agree</h2>
+                <ul id="list17">
+                    <li>Family and friends bring joy and support.</li>
+                    <li>Spending time with loved ones creates memories.</li>
+                    <li>It can lead to a happier life.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input17" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input17', 'list17')">Add</button>
+                </div>
+            </div>
+            <div id="box18" class="content-box">
+                <h2>Reasons to Disagree</h2>
+                <ul id="list18">
+                    <li>Working extra can lead to career growth.</li>
+                    <li>It can provide financial rewards.</li>
+                    <li>It shows dedication to your job.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input18" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input18', 'list18')">Add</button>
+                </div>
+            </div>
+        </div>
+        <div class="statement">
+            <p>10. Having flexible shifts is better than fixed working hours, even if it means being available on-call at any time.</p>
+            <div>
+                <button class="button" onclick="toggleContent('box19', 'box20')">Agree</button>
+                <button class="button" onclick="toggleContent('box20', 'box19')">Disagree</button>
+            </div>
+            <div id="box19" class="content-box">
+                <h2>Reasons to Agree</h2>
+                <ul id="list19">
+                    <li>Flexible shifts can fit personal schedules.</li>
+                    <li>It allows you to work when you are most productive.</li>
+                    <li>You can better balance work and life.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input19" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input19', 'list19')">Add</button>
+                </div>
+            </div>
+            <div id="box20" class="content-box">
+                <h2>Reasons to Disagree</h2>
+                <ul id="list20">
+                    <li>Fixed hours provide a stable routine.</li>
+                    <li>It sets clear work-life boundaries.</li>
+                    <li>There is less stress about being on-call.</li>
+                </ul>
+                <div class="input-container">
+                    <input type="text" class="input-field" id="input20" placeholder="Add your reason...">
+                    <button class="button" onclick="addReason('input20', 'list20')">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent(openBoxId, closeBoxId) {
+            var openBox = document.getElementById(openBoxId);
+            var closeBox = document.getElementById(closeBoxId);
+            if (openBox.style.display === "none" || openBox.style.display === "") {
+                openBox.style.display = "block";
+                closeBox.style.display = "none";
+            } else {
+                openBox.style.display = "none";
+            }
+        }
+
+        function addReason(inputId, listId) {
+            var input = document.getElementById(inputId);
+            var newReason = input.value.trim();
+            if (newReason !== "") {
+                var list = document.getElementById(listId);
+                var newListItem = document.createElement('li');
+                newListItem.textContent = newReason;
+                list.appendChild(newListItem);
+                input.value = "";
+            }
+        }
+    </script>
+
+</body>
+</html>
