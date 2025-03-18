@@ -15,24 +15,24 @@
             display: flex;
             justify-content: space-between;
             gap: 10px; /* Reduced space between the columns */
-            height: 100vh; /* Full viewport height */
+            height: auto; /* Allow content to determine height */
         }
         h1 {
             text-align: center;
             color: #444;
             margin-bottom: 40px;
             width: 100%;
-            font-size: 2.5em; /* Increased font size */
+            font-size: 3.5em; /* Proportionally increased font size */
         }
         .content {
-            width: 65%;
+            width: 60%; /* Adjusted width for the content */
             overflow-y: auto; /* Allows content to scroll */
             padding-right: 10px; /* Adds space for scrollbar */
         }
         .sidebar-container {
-            width: 33%; /* Increased width for the sidebar */
+            width: 35%; /* Adjusted width for the sidebar */
             display: flex;
-            align-items: center; /* Vertically centers the sidebar */
+            align-items: flex-start; /* Aligns the sidebar to the top */
         }
         .sidebar {
             background-color: #fff;
@@ -40,17 +40,17 @@
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 50%; /* Positions the sidebar */
-            transform: translateY(-50%); /* Centers the sidebar vertically */
+            position: relative; /* Changed to relative positioning */
+            top: 0; /* Reset top position */
+            transform: none; /* Reset transform */
             height: fit-content;
             width: 100%; /* Ensures sidebar takes full width */
         }
         .sidebar h2 {
-            font-size: 2em; /* Increased font size */
+            font-size: 2.8em; /* Proportionally increased font size */
         }
         .sidebar ul {
-            font-size: 1.7em; /* Increased font size for better readability */
+            font-size: 2.3em; /* Proportionally increased font size */
         }
         .statement {
             background-color: #fff;
@@ -61,19 +61,19 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .statement p {
-            font-size: 1.8em; /* Increased font size */
+            font-size: 2.3em; /* Proportionally increased font size */
             margin-bottom: 15px;
         }
         .button {
             margin: 5px;
-            padding: 20px 25px; /* Increased padding for larger buttons */
+            padding: 25px 30px; /* Increased padding for larger buttons */
             background-color: #007BFF;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
-            font-size: 1.5em; /* Increased font size for buttons */
+            font-size: 2.3em; /* Proportionally increased font size */
         }
         .button:hover {
             background-color: #0056b3;
@@ -91,17 +91,17 @@
         }
         .input-field {
             width: calc(100% - 80px);
-            padding: 10px; /* Increased padding */
+            padding: 15px; /* Increased padding */
             border: 1px solid #ddd;
             border-radius: 5px;
             box-sizing: border-box;
             margin-right: 5px;
-            font-size: 1.2em; /* Increased font size */
+            font-size: 2.3em; /* Proportionally increased font size */
         }
         ul {
             padding-left: 20px;
             list-style-type: disc;
-            font-size: 1.7em; /* Increased font size for reasons */
+            font-size: 2.3em; /* Proportionally increased font size */
         }
     </style>
 </head>
